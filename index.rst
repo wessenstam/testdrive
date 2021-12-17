@@ -1,110 +1,59 @@
-.. title:: ThycoticCentrify - Server Suite Handson Training
+.. title:: ThycoticCentrify - Testdrive
 
 .. toctree::
    :maxdepth: 2
-   :caption: Lab 1
-   :name: _l1
+   :caption: Module 1
+   :name: _m1
    :hidden:
 
-   lab1/lab1
-  
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 2
-   :name: _l2
-   :hidden:
-
-   lab2/lab2
-   
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 3
-   :name: _l3
-   :hidden:
-
-   lab3/lab3
+   module1/module1
 
 .. toctree::
    :maxdepth: 2
-   :caption: Lab 4
-   :name: _l4
+   :caption: Module 2
+   :name: _m2
    :hidden:
 
-   lab4/lab4
+   module2/module2
 
 .. toctree::
    :maxdepth: 2
-   :caption: Lab 5
-   :name: _l5
+   :caption: Module 3
+   :name: _m3
    :hidden:
 
-   lab5/lab5
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 6
-   :name: _l6
-   :hidden:
-
-   lab6/lab6
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 7
-   :name: _l7
-   :hidden:
-
-   lab7/lab7
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 8
-   :name: _l8
-   :hidden:
-
-   lab8/lab8
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 9
-   :name: _l9
-   :hidden:
-
-   lab9/lab9
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 10
-   :name: _l10
-   :hidden:
-
-   lab10/lab10
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Lab 11
-   :name: _l11
-   :hidden:
-
-   lab11/lab11
+   module3/module3
 
 
 .. _getting_started:
 
-----------------
-About this guide
-----------------
+------------
+Introduction
+------------
 
-This hands-on exercise guide will walk you through the fundamental features and functionality of Centrify Server Suite. You will be working with several computer systems as you complete each exercise, however not all systems will need to be powered during each lab exercise. Before each lab begins you will be provided initial instructions related to required systems. This is done to conserve resources in the virtual environment.
-
-| If you plan to use the training materials for in-house training, you can configure a training environment in your network, but it is recommended to consider your network configurations and security practices. This environment is for training purposes and will not match your network environment. Use the **Appendix** in the **Student Guide** to read more about the training environment and how it is configured.
-
-| During this training, you will be working with Greensafe Payroll Services. Alex Foster is the primary administrator of the Infrastructure. Greensafe’s network includes a Windows Active Directory domain controller, one (A) Windows Application Server, one (1) Microsoft SQL Server, and two (2) UNIX servers. A “cloud” environment is also used for DevOps and includes two independent non-AD joined servers. As part of the purchase of Centrify Server Suite, a SaaS based Centrify Identity Platform (tenant) has been provided to facilitate the management of the environment.
+The purpose of this guide is to provide configuration options that follow industry-proven best practices when working with the Centrify solutions. This guide is used in conjunction with a fully configured virtual environment (hosted by Skytap) where you can participate in the hands-on experience of working with the Centrify Platform, Centrify Authentication Service, Centrify Privilege Elevation Service, as well as Centrify Audit and Monitoring Service.
+This guide breaks down step-by-step configurations and product features that you can follow and adjust to match some of your common company security practices. Contact your Centrify Systems Engineer if you have questions or need further assistance in mirroring challenges you may have in your own production environment.
 
 
-.. figure:: images/infra-diagram.png
+Your Virtual Environment
+------------------------
 
-------
 
-Start the lab :ref:`l1`
+The diagram below describes the virtual environment that is available to you during this Centrify Test Drive. It includes a domain controller, a Microsoft® Windows® Application Server, a Microsoft SQL Server, a Microsoft Windows Server that is used for Centrify Applications, one CentOS 8 system that is joined to the domain, and one CentOS system that is outside the network.
+
+.. figure:: images/lab-001.png
+
+.. list-table::
+    :widths: 50 50
+
+    * - Domain Admins
+      - Alex Foster (afoster)
+    * - Password
+      - Centr1fy
+    * - What is your favorite controller
+      - red
+
+.. note::
+   All passwords are **Centr1fy** (except for Centrify managed accounts).
+
+   | In some cases the security question has been changed into *What company is providing this evaluation?* In those cases, reply with **Centrify**
