@@ -24,6 +24,22 @@
 
    module3/module3
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Module 4
+   :name: _m4
+   :hidden:
+
+   module4/module4
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Module 5
+   :name: _m5
+   :hidden:
+
+   module5/module5
+
 
 .. _getting_started:
 
