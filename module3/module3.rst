@@ -34,20 +34,20 @@ This exercise will walk you through Centrify Privilege Elevation Service. You wi
 #. Without closing the current window, from the desktop, click on *Event Viewer* one more time *but do not run with privilege*. Simply double-click on it. Navigate to the *security* logs and notice that *you lost your privilege*. **The right to see the logs are only applicable when you run with privilege.**
 
 
-
 Privilege Elevation: Just-In-Time Privilege (MFA Enabled)
 *********************************************************
  
 #. Log in to *Centrify* as Alex Foster (**afoster**)
-#. Let's give the contractor Laura Bennet (*lbennet*) access to the *CloudVM* system. Open the *Admin Portal*
+#. Let's give the contractor Laura Bennet (*lbennet*) access to the *CloudVM.localdomain* system. Open the *Admin Portal*
 #. Login as **afoster** with the password *Centr1fy*
 #. Navigate to *Resources > Systems*
-#. Click the *CloudVM* system
+#. Click the *CloudVM.localdomain* system
 #. Click **Permissions** and click **Add**
-#. In the search bar type *Laura*, slect her account **LBennett@omicron..** and click **Add**
+#. In the search bar type *Laura*, select her account **LBennett@omicron..** and click **Add**
 
    .. figure:: images/lab-004.png
 
+#. Make sure **View** and **AgentAuth** are enabled
 #. Click **Save**
 #. Log out by clicking the name and select **Sign Out**
 
@@ -55,35 +55,35 @@ Privilege Elevation: Just-In-Time Privilege (MFA Enabled)
 
 #. Login the portal as **lbennett** with the known password *Centr1fy*
 #. Expand *Resources > Systems*
-#. Locate *CloudVM*, right-click on it and select **Enter Account**
+#. Locate *CloudVM.localdomain*, right-click on it and select **Enter Account**
 #. Login as **lbennett@omicron.lab** with *Cenr1fy* when prompted for User Name and Password
-#. When prompted for MFA, select *Security Question*; Answer: **Centrify**
 #. Once you are logged in, issue the command ``cat /etc/shadow``. Notice you do not have rights to see the content of the file.
 #. Attempt utilizing the ``sudo cat /etc/shadow`` command and providing all requested follow up security questions, the system is telling that the user is not a part of the sudoers group and therefore, unable to run the command.
 
    .. figure:: images/lab-005.png
 
+#. Logout of the session by **CTRL+d** and click **Close**
 #. Open a Google Chrome *Incognito* screen
 #. Open the Admin Portal by typing *centrifymember.omicron.lab* and login as **afoster**
-#. Navigate *Settings > Resources > Global Workflow > Privilege Elevation Workflow*
-#. Click **Add** and then set the first field *Approver Type* to **Requestor's Manager**
-#. The second field *Action if user has no manager* to **Autmatically approve** (not the best idea, but this is for a lab.....)
-#. Click **Add**
+#. Click on *CloudVM.localdomain* and select *Workflow* and set *Privilege Elevation* to **Yes**
+#. Once Privilege Elevation is set to yes, confirm **Requestor’s Manager** is the approvers for the request and set *Action if user has no manager* to **Automatically Approve**
+#. Click **Save**. Now, users that are not part of the sudoers group, will have the ability to request privilege as needed.
 
-   .. figure:: images/lab-011.png
+   .. figure:: images/lab-012.png
 
-#. Click **Save**
-#. Click on *CloudVM* and select *Workflow* and set *Privilege Elevation* to **Yes**
-#. Once Privilege Elevation is set to yes, confirm **Requestor’s Manager** is one of the approvers for the request. Hit Save. Now, users that are not part of the sudoers group, will have the ability to request privilege as needed.
-#. Return to the first Chrome Tab where lbennett is logged in.
-#. Log in once again to the CloudVM
-#. Issue ‘sudo cat /etc/shadow’
+#. Return to the *first Google Chrome* session where *lbennett* is logged in and click in the right top corner the user name and select **Reload Rights**
+#. Log in once again to the *CloudVM.localdomain*
+#. Issue ``sudo cat /etc/shadow``
 #. Now notice that Laura can elevate privilege based on a request
-#. Follow the prompts on your screen and accept all defaults except the last step, Duration for request. Select number 3 [Temporary]. Since the request was automatically approved, user can now issue the command from step 16
-#. Alternatively, we can provision the rights to this user permanently. Return to the tab where you logged in as Afoster. Expand Resources and click on Systems
-#. Click on CloudVM and then Privilege Elevation. Locate the Add button and click on it
-#. Type lbennett on the search bar. Select her account and click Add at the bottom
-#. Repeat steps 14-16 and verify that user now has access to the /etc/shadow file
+#. Follow the prompts on your screen and accept all defaults except the last step, Duration for request. Select number 3 [Temporary]. Since the request was automatically approved, user can now issue the command ``sudo cat /etc/shadow``
+
+Permanent Privileged Elevation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 
+#. Alternatively, we can provision the rights to this user permanently. Return to the tab where you logged in as Afoster and navigate to *Resources > Systems*
+#. Click on **CloudVM.localdomain** and then **Privilege Elevation**. Click **Add**
+#. Type **lbennett** on the search bar. Select her account and click **Add** at the bottom and click **Save**
+#. Log in to the system, as done earlier, and run ``sudo /etc/shadow``. You should see now that the command can be run without approval.
 
 
 .. raw:: html
