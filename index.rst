@@ -66,7 +66,7 @@ The diagram below describes the virtual environment that is available to you dur
       - Alex Foster (afoster)
     * - Password
       - Centr1fy
-    * - What is your favorite controller
+    * - What is your favorite color?
       - red
 
 .. note::
