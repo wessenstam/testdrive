@@ -1,4 +1,4 @@
-.. title:: ThycoticCentrify - Testdrive
+.. title:: Delinea - Testdrive
 
 .. toctree::
    :maxdepth: 2
